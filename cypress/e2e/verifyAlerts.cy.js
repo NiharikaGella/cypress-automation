@@ -1,7 +1,7 @@
 ///<reference types = "cypress"/>
-it('verify home page',()=>{
+it('verify Alerts',()=>{
 
-    cy.viewport(1280, 720);
+    
 
     //visiting the url
     cy.visit('https://demo.automationtesting.in')
@@ -15,7 +15,7 @@ it('verify home page',()=>{
     cy.get(':nth-child(4) > .dropdown-menu > :nth-child(1) > a').click();
     cy.get('.active > .analystic').scrollIntoView().should('be.visible');
     cy.get(' #OKTab > .btn').scrollIntoView().should('be.visible').click();
-
+    cy.wait(3000);
     //Click on 'Ok' alert box and verify the text
     cy.on('window.alert',(str) =>
     {
@@ -43,6 +43,7 @@ it('verify home page',()=>{
 
      //click on alert with text box > Enter Niharika and verify the alert text
      cy.window().then(function(p){
+        cy.wait(3000);
         //stubbing prompt window
         cy.stub(p, "prompt").returns("Niharika");
         // click on Click for JS Prompt button

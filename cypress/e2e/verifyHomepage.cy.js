@@ -12,6 +12,7 @@ it('verify home page',()=>{
     cy.get('#logo').should('be.visible');
 
     //verifying the input box, typing  a text and clicking enter
+    cy.wait(3000);
     cy.get('#email').should('be.visible');
     cy.get('#email').type("niha.gella@gmail.com");
     cy.get('#enterimg').click();
@@ -22,7 +23,7 @@ it('verify home page',()=>{
     cy.get('.col-md-8 > .form-control').type("langley"); 
     cy.get('#eid > .form-control').type("niha.gella@gmail.com");
     cy.get(':nth-child(4) > .col-md-4 > .form-control').type("7459539066");
-    cy.wait(5000);
+    cy.wait(3000);
 
     //selecting the radio button
     cy.get(':nth-child(5) > .col-md-4 > :nth-child(2) > input').check();
